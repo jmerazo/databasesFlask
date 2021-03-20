@@ -14,3 +14,6 @@ class DatabaseController():
     def search(self, db):
         data = databaseModel.listTables(db)
         return data
+    
+    def createTable(self, nametable):
+        databaseModel.createTable(nametable)

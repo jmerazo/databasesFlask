@@ -21,3 +21,11 @@ def databaseCreate():
 def tableList(db):
     tables = databaseController.search(db)
     return make_response(jsonify(tables), 200)
+
+@app.route('/ctable', methods=['POST'])
+def tableCreate():
+    nametable = request.json['nametable']
+
+    databaseController.createTable(nametable)
+
+    return make_response('Base de datos creada con exito', 201)
