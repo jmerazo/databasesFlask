@@ -17,7 +17,6 @@ class DatabaseModel():
     
     def listTables(self, db):
         cursor = mysql.get_db().cursor()
-        #cursor.execute("SHOW TABLES FROM `%s`" %db,)
         cursor.execute("SHOW TABLES FROM `%s`" %db)
         data = cursor.fetchall()
         cursor.close()
